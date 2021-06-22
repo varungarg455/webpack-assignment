@@ -7,7 +7,8 @@ module.exports = {
   },
  output: {
    path: path.join(__dirname, '/build'),
-   filename: 'index.bundle.js',
+   filename: '[name].bundle.[contenthash].js',
+   chunkFilename: "chunk-[name].[contenthash].js",
  },
  devServer: {
    port: 3000,

@@ -5,9 +5,9 @@ import {
   Route,
   Link
 } from "react-router-dom";
-const Home = lazy(() => import('./Home'))
-const About = lazy(() => import('./About'))
-const Dashboard = lazy(() => import('./Dashboard'))
+const Home = lazy(() => import(/* webpackChunkName: "home" */ './Home.jsx'))
+const About = lazy(() => import(/* webpackChunkName: "about" */ './About.jsx'))
+const Dashboard = lazy(() => import(/* webpackChunkName: "dashboard" */ './Dashboard.jsx'))
 
 function App() {
     return <Router>
