@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    strategy:
+          matrix:
+            node_version: [14.x]
+    
+    steps:
+      - name: Code checkout
+        uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node_version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node_version }}
+
+      - name: Install dependencies
+        run: npm i
+
+      - name: Run builds
+        run: npm run build
+
+      - name: Archive data
+        uses: actions/upload-artifact@v2
+        with:
+          name: build
+          path: |
+            build
