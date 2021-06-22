@@ -1,0 +1,17 @@
+h1{
+    color: teal
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+}
+
+li {
+    padding: 20px;
+}
+
+.container {
+    padding: 40px;
+}
